@@ -46,6 +46,12 @@ print(f"O valor total de {nameProduct} é R$ {totalValue}")'''
 
 print(resp)'''
 
-resp, textInvert = contarLetras("Não deixe de ser uma pessoa má por conta de pessoas boas")
+'''resp, textInvert = contarLetras("Não deixe de ser uma pessoa má por conta de pessoas boas")
 
-print(f"O texto possui {resp} letras e ao contrario fica {textInvert}")
+print(f"O texto possui {resp} letras e ao contrario fica {textInvert}")'''
+
+a = [1, 2, 2, 3, 4, 4, 5, 3, 6, 7, 6, 8]
+
+resp = list(a)
+
+print(resp)

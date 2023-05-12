@@ -55,3 +55,11 @@ def contarLetras(text):
 def estoque(a, b, c):
     total = b * c
     return a, total
+
+def list(l):
+    b = []
+    for x in range(12):
+        b.append(l[x])
+        if l[x] == x:
+            b.remove(l[x])
+    return b
