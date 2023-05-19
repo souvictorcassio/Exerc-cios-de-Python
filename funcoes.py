@@ -63,3 +63,16 @@ def list(l):
         if l[x] == x:
             b.remove(l[x])
     return b
+
+def primo(a):
+    if a == 1:
+        print("Não é primo!")
+    elif a == 2:
+        print("É primo")
+    elif a % 2 == 0:
+        print("Não é primo!")
+    else:
+        if (a % 3 == 0 and a != 3) or (a % 5 == 0 and a != 5) or (a % 7 == 0 and a != 7):
+            print("Não é primo!")
+        else:
+            print("É primo!")
