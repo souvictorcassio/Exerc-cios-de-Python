@@ -13,20 +13,30 @@ class BankAccount:
         if self.status == False:
             print("A conta está desativada!")
         else:
-            if self.limitUsed > 0:
-                print(self.limitUsed)
+            if self.limitUsed < 0:
+                refundLimit = self.limitUsed + money
+                if refundLimit > 0:
+                    self.limit += (self.limitUsed * -1)
+                    self.balance += refundLimit
+                    self.limitUsed = 0
+                else:
+                    self.limit += money
             else:
-                self.balance = money
+                self.balance += money
 
     def withdraw(self, money):
+      if self.status == False:
+            print("A conta está desativada!")
+      else:
         if money > self.balance:
             if money > self.balance + self.limit:
                 print("Saldo insuficiente")
             else:
                 withdrawBalance = money - self.balance
-                withdrawLimit = self.limit - withdrawBalance
+                self.limitUsed = self.balance - money
                 self.balance = 0
                 self.limit -= withdrawBalance
+                
         else:
             self.balance -= money
 
@@ -59,10 +69,10 @@ cc = BankAccount('001', 0, 'Victor', 'Conta Corrente', 0, 0)
 
 cc.activateAccount()
 cc.consultBalance()
-cc.deposit(133)
+cc.deposit(1000)
 cc.includeLimit(500)
 cc.consultBalance()
-cc.withdraw(217)
+cc.withdraw(1500)
 cc.consultBalance()
-cc.deposit(50)
+cc.deposit(3150)
 cc.consultBalance()
